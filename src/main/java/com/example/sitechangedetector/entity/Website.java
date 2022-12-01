@@ -4,9 +4,11 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
+import java.util.Set;
 
 @Entity
 @Table(name="website_form")
@@ -22,4 +24,7 @@ public class Website {
     private boolean active;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date date;
+
+    @OneToMany(mappedBy = "website")
+    private Set<Page> pages;
 }
