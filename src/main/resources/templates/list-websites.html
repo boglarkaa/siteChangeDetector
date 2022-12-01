@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+    <title>List Websites</title>
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <h2>List Websites</h2>
+    <hr/>
+    <table class="table table-bordered table-striped">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Link</th>
+            <th>Active</th>
+            <th>Date</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr th:each="website: ${websites}">
+                <td th:text="${website.name}"></td>
+                <td th:text="${website.link}"></td>
+                <td th:text="${website.active}"></td>
+                <td th:text="${website.date}"></td>
+                <td>
+                    <a th:href="@{/showUpdateForm(websiteId=${website.id})}" class="btn btn-info">Update</a>
+                    <a th:href="@{/deleteWebsite(websiteId=${website.id})}" class="btn btn-danger ml-2">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <a th:href="@{/addWebsiteForm}" class="btn btn-primary mb-2">Add Website</a>
+</div>
+</body>
+
+</html>
