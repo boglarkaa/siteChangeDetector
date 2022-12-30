@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html xmlns:th="http://thymeleaf.org">
 <head>
     <title>Add Page</title>
@@ -16,6 +15,7 @@
         <input type="text" th:field="${page.link}" placeholder="Enter link" class="form-control col-4 mb-2"/>
         <button class="btn btn-primary" type="submit">Save</button>
         <input type="hidden" th:field="*{id}"/>
+        <input type="hidden" th:field="*{website_id}"/>
     </form>
 </div>
 </body>

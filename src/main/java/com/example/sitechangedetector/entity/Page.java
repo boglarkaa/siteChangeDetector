@@ -2,11 +2,15 @@ package com.example.sitechangedetector.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name="pages")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Page {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
