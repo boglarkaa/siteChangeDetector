@@ -1,3 +1,5 @@
+# Work in progress
+
 # Site Change Detector
 
 Application to detect if a webpage changes content
